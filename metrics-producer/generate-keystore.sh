@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Credit goes to: https://github.com/justjanne/pem-to-keystore
 # Setup
 
 # Create combined Cert+Key from PEM files
