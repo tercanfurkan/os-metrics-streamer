@@ -19,7 +19,7 @@ keytool -changealias -storepass password -keystore client.truststore.jks -alias 
 keytool -storepasswd -storepass password -new $TARGET_PASSWORD -keystore client.truststore.jks
 
 # Move result to target location
-mv client.keystore.p12 client.truststore.jks $CERTS_DIR
+mv client.* $CERTS_DIR
 
 # Cleanup
 rm /tmp/cert.pem

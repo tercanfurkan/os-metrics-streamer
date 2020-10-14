@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.tercanfurkan.os-metrics</groupId>
+    <artifactId>os-metrics</artifactId>
+    <packaging>pom</packaging>
+ 
+    <name>OS Metrics Streamer</name>
+    <version>0.1-SNAPSHOT</version>
+
+    <properties>
+        <kafka-client.version>2.6.0</kafka-client.version>
+        <slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
+        <jackson-databind.version>2.11.3</jackson-databind.version>
+    </properties>
+
+    <modules>
+        <module>metrics-producer</module>
+        <module>metrics-consumer</module>
+    </modules>
+
+</project>

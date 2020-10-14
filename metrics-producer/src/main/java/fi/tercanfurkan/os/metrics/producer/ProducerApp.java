@@ -1,6 +1,6 @@
-package fi.tercanfurkan.producer;
+package fi.tercanfurkan.os.metrics.producer;
 
-public class App {
+public class ProducerApp {
 
     public static void main(String[] args) {
         MetricsProducer producer = new MetricsProducer();

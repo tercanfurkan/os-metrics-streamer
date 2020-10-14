@@ -1,4 +1,4 @@
-package fi.tercanfurkan.producer;
+package fi.tercanfurkan.os.metrics.producer;
 
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -8,14 +8,15 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.util.Properties;
 
+
 public class MetricsProducer {
 
-    private static String SERVICE_URI = "kafka-os-metrics-streamer-tercanfurkan-a9c4.aivencloud.com:17768";
     private static String TOPIC = "os-metrics";
-
-    private static String SSL_TRUSTSTORE_LOCATION = System.getProperty("user.dir") + "/certs/client.truststore.jks";
-    private static String SSL_KEYSTORE_LOCATION = System.getProperty("user.dir") + "/certs/client.keystore.p12";
-    private static String SSL_KEY_PASSWORD = System.getProperty("kafka.keystore.pass");
+    private static String CERTS_PATH = System.getProperty("user.dir") + "/certs/";
+    private static String SERVICE_URI = System.getProperty("kafka.service.uri");
+    private static String SSL_TRUSTSTORE_LOCATION = CERTS_PATH + "client.truststore.jks";
+    private static String SSL_KEYSTORE_LOCATION = CERTS_PATH + "client.keystore.p12";
+    private static String SSL_KEY_PASSWORD = System.getProperty("kafka.keystore.password");
 
     public final Producer<String, String> producer;
 
@@ -24,7 +25,6 @@ public class MetricsProducer {
     }
 
     public static Producer<String, String> createProducer() {
-        System.out.println("SSL_KEYSTORE_PASSWORD: " + SSL_KEY_PASSWORD);
         Properties props = new Properties();
         props.put("bootstrap.servers", SERVICE_URI);
         props.put("security.protocol", "SSL");

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tercanfurkan.os-metrics</groupId>
-    <artifactId>metrics-producer</artifactId>
+    <artifactId>metrics-consumer</artifactId>
     <packaging>jar</packaging>
     <version>0.1-SNAPSHOT</version>
 
@@ -13,6 +13,7 @@
         <kafka-client.version>2.6.0</kafka-client.version>
         <slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
         <jackson-databind.version>2.11.3</jackson-databind.version>
+        <postgresql.version>42.2.0</postgresql.version>
     </properties>
 
     <dependencies>
@@ -33,6 +34,11 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.17</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -45,7 +51,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>fi.tercanfurkan.os.metrics.producer.ProducerApp</mainClass>
+                            <mainClass>fi.tercanfurkan.os.metrics.consumer.ConsumerApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -64,8 +70,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>8</source>
+                    <target>8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
