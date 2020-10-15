@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp certs/* metrics-consumer/certs
-cp certs/service.* metrics-producer/certs
-cp generate-keystore.sh metrics-consumer
-cp generate-keystore.sh metrics-producer
+cp certs/client.* metrics-consumer/certs
+cp certs/jdbc_ca.pem metrics-consumer/certs
+
+cp certs/client.* metrics-producer/certs
