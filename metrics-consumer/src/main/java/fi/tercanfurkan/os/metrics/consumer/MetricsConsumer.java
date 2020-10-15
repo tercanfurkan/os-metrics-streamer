@@ -24,6 +24,10 @@ public class MetricsConsumer {
     }
 
     private static KafkaConsumer<String, String> createConsumer() {
+        System.out.println(SERVICE_URI);
+        System.out.println(SSL_TRUSTSTORE_LOCATION);
+        System.out.println(SSL_KEYSTORE_LOCATION);
+        System.out.println(SSL_KEY_PASSWORD);
         Properties props = new Properties();
         props.put("bootstrap.servers", SERVICE_URI);
         props.put("security.protocol", "SSL");
