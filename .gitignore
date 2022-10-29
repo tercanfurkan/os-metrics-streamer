@@ -1,3 +1,11 @@
 **/target
 .envrc
 **/generate-keystore.sh
+
+# IDEA
+.DS_Store
+.idea/
+metrics-consumer/.DS_Store
+metrics-consumer/metrics-consumer.iml
+metrics-producer/metrics-producer.iml
+os-metrics.iml
