@@ -10,9 +10,9 @@
     <version>0.1-SNAPSHOT</version>
 
     <properties>
-        <kafka-client.version>2.6.0</kafka-client.version>
-        <slf4j-log4j12.version>1.7.5</slf4j-log4j12.version>
-        <jackson-databind.version>2.11.3</jackson-databind.version>
+        <kafka-client.version>3.2.0</kafka-client.version>
+        <slf4j-log4j12.version>1.7.30</slf4j-log4j12.version>
+        <jackson-databind.version>2.13.4.2</jackson-databind.version>
     </properties>
 
     <dependencies>
