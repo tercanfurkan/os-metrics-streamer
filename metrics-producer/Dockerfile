@@ -1,5 +1,4 @@
-#FROM maven:3.2.5-jdk-8u40
-FROM maven:3.5.3-jdk-8-alpine
+FROM maven:3.8-openjdk-17
 
 MAINTAINER tercanfurkan
 
