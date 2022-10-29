@@ -15,7 +15,8 @@ public class MetricsConsumer {
     private static String SERVICE_URI = System.getProperty("kafka.service.uri");
     private static String SSL_TRUSTSTORE_LOCATION = CERTS_PATH + "client.truststore.jks";
     private static String SSL_KEYSTORE_LOCATION = CERTS_PATH + "client.keystore.p12";
-    private static String SSL_KEY_PASSWORD = System.getProperty("kafka.keystore.password");
+    private static String KAFKA_KEYSTORE_PASSWORD = System.getProperty("kafka.keystore.password");
+    private static String SSL_KEY_PASSWORD = System.getProperty("ssl.key.password");
 
     public final KafkaConsumer<String, String> consumer;
 
@@ -29,7 +30,7 @@ public class MetricsConsumer {
         props.put("security.protocol", "SSL");
         props.put("ssl.endpoint.identification.algorithm", "");
         props.put("ssl.truststore.location", SSL_TRUSTSTORE_LOCATION);
-        props.put("ssl.truststore.password", SSL_KEY_PASSWORD);
+        props.put("ssl.truststore.password", KAFKA_KEYSTORE_PASSWORD);
         props.put("ssl.keystore.type", "PKCS12");
         props.put("ssl.keystore.location", SSL_KEYSTORE_LOCATION);
         props.put("ssl.keystore.password", SSL_KEY_PASSWORD);
