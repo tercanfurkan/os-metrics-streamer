@@ -41,12 +41,12 @@ public class MetricsProducer {
         props.put("value.serializer",
             "org.apache.kafka.common.serialization.StringSerializer");
 
-        return new KafkaProducer<String, String>(props);
+        return new KafkaProducer<>(props);
     }
 
     public void sendMessage(String message) {
-        ProducerRecord<String, String> data = new ProducerRecord<String, String>(
-            TOPIC, message);
+        ProducerRecord<String, String> data = new ProducerRecord<>(
+                TOPIC, message);
         producer.send(data, new Callback() {
             @Override
             public void onCompletion(RecordMetadata recordMetadata, Exception e) {
